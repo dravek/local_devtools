@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['cron_success'] = 'Cron executed successfully.';
 $string['cli_error_code'] = 'CLI execution failed (code {$a}).';
+$string['cron_success'] = 'Cron executed successfully.';
 $string['debug_disabled_success'] = 'Debug messages have been disabled.';
 $string['debug_enabled_success'] = 'Debug messages have been enabled.';
 $string['debug_locked_configphp'] = 'Debug setting is locked in config.php.';
