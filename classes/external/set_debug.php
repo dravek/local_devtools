@@ -31,13 +31,10 @@ use core_external\external_single_structure;
 use core_external\external_value;
 use moodle_exception;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * External function: set Moodle debug messages on/off.
  */
 class set_debug extends external_api {
-
     /**
      * Returns description of method parameters.
      *

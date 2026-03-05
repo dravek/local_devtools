@@ -30,13 +30,10 @@ use core_external\external_single_structure;
 use core_external\external_value;
 use context_system;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * External function: purge all Moodle caches.
  */
 class purge_caches extends external_api {
-
     /**
      * Returns description of method parameters.
      *

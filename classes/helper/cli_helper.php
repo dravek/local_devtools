@@ -26,13 +26,10 @@ namespace local_devtools\helper;
 
 use moodle_exception;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Utility class providing shared CLI helpers for devtools external functions.
  */
 class cli_helper {
-
     /**
      * Resolve a CLI script path, supporting mixed root/public setups.
      *

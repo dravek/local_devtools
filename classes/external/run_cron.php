@@ -31,13 +31,10 @@ use core_external\external_value;
 use context_system;
 use local_devtools\helper\cli_helper;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * External function: run Moodle cron via CLI.
  */
 class run_cron extends external_api {
-
     /**
      * Returns description of method parameters.
      *

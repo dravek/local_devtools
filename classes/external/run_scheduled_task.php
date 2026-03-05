@@ -32,13 +32,10 @@ use context_system;
 use moodle_exception;
 use local_devtools\helper\cli_helper;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * External function: run a specific scheduled task via CLI.
  */
 class run_scheduled_task extends external_api {
-
     /**
      * Returns description of method parameters.
      *
