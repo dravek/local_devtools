@@ -1,0 +1,72 @@
+{{!
+    Navbar dropdown template for local_devtools.
+}}
+<div class="nav-item dropdown local-devtools-container" id="local-devtools-menu">
+    <a class="nav-link dropdown-toggle" id="local-devtools-toggle" data-bs-toggle="dropdown" data-toggle="dropdown" data-bs-auto-close="outside" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="{{#str}}pluginname, local_devtools{{/str}}">
+        <i class="fa fa-wrench"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end shadow border-0 p-2" aria-labelledby="local-devtools-toggle" data-bs-auto-close="outside" style="right: 0; left: auto; overflow: visible;">
+        <div class="dropdown-header font-weight-bold px-3 py-2 border-bottom mb-2">
+            <i class="fa fa-wrench mr-1"></i> {{#str}}pluginname, local_devtools{{/str}}
+        </div>
+
+        <a class="dropdown-item p-2 rounded local-devtools-action" href="#" data-action="purge_caches">
+            <i class="fa-solid fa-trash-can fa-fw mr-2 text-secondary"></i> {{#str}}purge_caches, local_devtools{{/str}}
+            <i class="fa fa-circle-notch fa-spin ml-auto hidden spinner"></i>
+        </a>
+
+        <a class="dropdown-item p-2 rounded local-devtools-action" href="#" data-action="run_cron">
+            <i class="fa-solid fa-clock fa-fw mr-2 text-secondary"></i> {{#str}}run_cron, local_devtools{{/str}}
+            <i class="fa fa-circle-notch fa-spin ml-auto hidden spinner"></i>
+        </a>
+
+        <div class="dropdown-divider my-2"></div>
+
+        <div class="px-3 py-1 mb-2 local-devtools-debug-picker">
+            <div class="d-flex align-items-center editmode-switch-form local-devtools-debug-switch-wrap" {{#debuglocked}}title="{{#str}}debug_locked_configphp, local_devtools{{/str}}"{{/debuglocked}}>
+                <div class="input-group">
+                    <div class="form-check form-switch mb-0">
+                        <input type="checkbox" class="form-check-input local-devtools-debug-switch" id="local-devtools-debug-switch" {{#debugenabled}}checked{{/debugenabled}} {{#debuglocked}}disabled{{/debuglocked}}>
+                        <span class="form-check-label">&nbsp;</span>
+                    </div>
+                    <span class="ms-2 mb-0 form-check-label">
+                        {{#str}}debug_messages, local_devtools{{/str}}
+                    </span>
+                </div>
+                <i class="fa fa-circle-notch fa-spin ml-2 hidden spinner"></i>
+            </div>
+        </div>
+
+        <div class="dropdown-divider my-2"></div>
+
+        <div class="px-3 py-1 mb-2 local-devtools-task-picker">
+            <label for="local-devtools-task-select" class="d-block mb-1">
+                <i class="fa-solid fa-list-ul fa-fw mr-2 text-secondary"></i> {{#str}}run_scheduled_task, local_devtools{{/str}}
+            </label>
+            <div class="local-devtools-task-select-wrap">
+                <select id="local-devtools-task-select" class="form-control form-control-sm mb-2">
+                    <option value="">{{#str}}select_task, local_devtools{{/str}}</option>
+                    {{#tasks}}
+                        <option value="{{classname}}">{{name}} ({{component}})</option>
+                    {{/tasks}}
+                </select>
+            </div>
+            <div class="local-devtools-run-task-wrap">
+                <button class="btn btn-primary btn-sm btn-block local-devtools-run-task" id="local-devtools-run-task">
+                    <i class="fa fa-play mr-1"></i> {{#str}}run_task_button, local_devtools{{/str}}
+                    <i class="fa fa-circle-notch fa-spin ml-1 hidden spinner"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="local-devtools-footer px-3 pb-1">
+            <span class="local-devtools-footer-meta">{{pluginrelease}}</span>
+        </div>
+    </div>
+</div>
+
+{{#js}}
+require(['local_devtools/devtools'], function(DevTools) {
+    DevTools.init();
+});
+{{/js}}
