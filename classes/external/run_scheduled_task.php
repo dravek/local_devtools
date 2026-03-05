@@ -88,8 +88,7 @@ class run_scheduled_task extends external_api {
             $returnvar   = 0;
             exec($command, $outputlines, $returnvar);
 
-            $outputstr = implode("\n", $outputlines);
-            $success   = ($returnvar === 0);
+            $success = ($returnvar === 0);
 
             if (!$success) {
                 $message = get_string('cli_error_code', 'local_devtools', $returnvar);

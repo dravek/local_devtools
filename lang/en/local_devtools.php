@@ -43,5 +43,4 @@ $string['run_cron'] = 'Run Cron';
 $string['run_scheduled_task'] = 'Run Scheduled Task';
 $string['run_task_button'] = 'Run Task';
 $string['select_task'] = '-- Select a task --';
-$string['task_success'] = 'Scheduled task executed successfully.';
 $string['task_success_named'] = 'Scheduled task executed successfully: {$a}.';
